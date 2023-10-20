@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 5rem;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    flex-direction:row ;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0px 0px 5px black;
+    position: sticky;
+}
+#title{
+    font-size: 2rem;
+}
+.navitem{
+    display: flex;
+    flex-direction: row;
+    width: 25rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+#navlink{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+#navlink:hover{
+    color: blue;
+}
+.carousel-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    background-color: white;
+    padding: 8rem;
+}
+.carousel{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.carousel span{
+    border: 1px solid white;
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(400px);
+    -webkit-box-reflect: below 5px linear-gradient(transparent,transparent,#000400);
+}
+.carousel span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+.characters-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50%;
+}
+.about h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.characters{
+    width: 16rem;
+    height: 100%;
+    box-shadow: 0px 0px 5px black;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    justify-content: center;
+}
+.characters img{
+    object-fit: contain;
+    width: 100%;
+    height: 50%;
+}
